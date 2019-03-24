@@ -1,0 +1,8 @@
+.error {
+    color: red;
+}
+
+p {
+    display: inline;
+    padding-right: 10%;
+}

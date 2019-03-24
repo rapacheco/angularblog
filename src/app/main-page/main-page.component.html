@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1 class="display-4">BLOG</h1>
+  <p class="display-4">{{ userName ? "Welcome, " + userName + "! It's good to have you here :)" : "Welcome!" }}</p>
+  <hr class="my-4">
+  <button *ngIf="userName" class="btn btn-lg btn-outline-secondary" (click)="goToForm()">Create Article</button>
+  <button *ngIf="userName" class="btn btn-lg btn-outline-secondary" (click)="switch()">{{ personal ? "All" : "Your"}}
+    Articles</button>
+</div>
+
+<app-entry-list [personal]="personal" [currentId]="id"></app-entry-list>

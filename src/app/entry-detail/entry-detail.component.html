@@ -1,0 +1,55 @@
+<div class="container upper-block">
+  <h1>{{ entry.title }}</h1>
+  <h2>{{ entry.subtitle }}</h2>
+  <p>{{ entry.isDraft ? "Draft by:" : "By:"}} {{ user.userName }}</p>
+  <p>{{ entry.isDraft ? "Draft of: " + formatDate(entry.lastDraft) : "Published: " + formatDate(entry.published) }}</p>
+  <p *ngIf="entry.lastUpdated !== null">Last Updated: {{ formatDate(entry.lastUpdated) }}</p>
+</div>
+<div *ngIf="entry.userId === loggedId" class="container buttons">
+  <button *ngIf="entry.isDraft" class="btn btn-success" (click)="open(publish)">Publish</button>
+  <button class="btn btn-primary" (click)="updateEntry(id)">Update</button>
+  <button class="btn btn-danger" (click)="open(delete)">Delete</button>
+</div>
+<hr>
+<div class="container text-block">
+  <p>{{ entry.body }}</p>
+</div>
+<div *ngIf="entry.userId === loggedId" class="container buttons">
+  <button *ngIf="entry.isDraft" class="btn btn-success" (click)="open(publish)">Publish</button>
+  <button class="btn btn-primary" (click)="updateEntry(id)">Update</button>
+  <button class="btn btn-danger" (click)="open(delete)">Delete</button>
+</div>
+
+<ng-template #delete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">WARNING</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h4>Are you sure you want to delete this article?</h4>
+    <p>This action is not reversible</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="deleteEntry()">Delete</button>
+  </div>
+</ng-template>
+
+<ng-template #publish let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">PUBLISH ENTRY</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h4>Confirm publishing this article?</h4>
+      <p>It will be visible to all users</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cancel click')">Cancel</button>
+      <button type="button" class="btn btn-success" (click)="publishEntry()">Confirm</button>
+    </div>
+  </ng-template>

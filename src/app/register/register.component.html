@@ -1,0 +1,50 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">REGISTER</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group inputs">
+        <label for="username">Username</label>
+        <input [(ngModel)]="user.userName" name="username" type="text" class="form-control" id="username"
+          placeholder="Your username">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" name="email" type="email" class="form-control" id="email"
+          placeholder="Your email">
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" name="password" type="password" class="form-control" id="password"
+          placeholder="Your password">
+        <label for="confirm">Password</label>
+        <input [(ngModel)]="confirm" name="confirm" type="password" class="form-control" id="confirm"
+          placeholder="Confirm your password">
+      </div>
+      <div class="form-group social">
+      </div>
+      <label *ngIf="error" class="error">{{ error }}</label>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cancel click')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="tryRegister()">Register</button>
+  </div>
+</ng-template>
+
+<ng-template #success let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">SUCCESS</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h4>You have successfully registered! Welcome!</h4>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-primary" (click)="modal.dismiss('Cancel click')">Hurray!</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-md" [ngClass]="{'btn-outline-light' : !darkMode, 'btn-secondary' : darkMode}" (click)="open(content)">Register</button>

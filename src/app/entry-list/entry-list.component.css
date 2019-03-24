@@ -1,0 +1,33 @@
+tr:hover {
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 3%;
+    font-family: 'EB Garamond', serif;
+}
+
+.table-entry h3 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.table-entry p {
+    margin: 0;
+}
+
+.table-username {
+    color: gray;
+}
+
+.table-date p {
+    margin: 0;
+    text-align: right;
+    font-size: 70%;
+}
+
+a.btn {
+    width: 20%;
+    display: block;
+    margin: auto;
+}

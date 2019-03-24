@@ -1,0 +1,32 @@
+h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+.upper-block, .buttons {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.upper-block p {
+    margin: 0;
+}
+
+.text-block {
+    text-align: justify;    
+}
+
+.modal-title, .modal-body {
+    text-align: center;
+}
+
+.btn-danger {
+    margin-left: 1%;
+}
+
+.btn-success {
+    margin-right: 1%;
+}

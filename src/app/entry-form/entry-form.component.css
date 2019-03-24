@@ -1,0 +1,31 @@
+form {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 2%;
+    font-family: 'EB Garamond', serif;
+}
+
+input, textarea {
+    width: 70%;
+    margin: auto;
+}
+
+.titles input {
+    text-align: center;
+}
+
+label {
+    margin-top: 1%;
+}
+
+button:first-of-type {
+    margin-right: 3%;
+}
+
+@media only screen and (max-width: 768px) {
+    input, textarea {
+      width: 90%;
+    }
+  }

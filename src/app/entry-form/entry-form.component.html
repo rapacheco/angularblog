@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+    <h3>NEW ENTRY</h3>
+    <div class="form-group titles">
+      <label for="title">Title</label>
+      <input [(ngModel)]="entry.title" name="title" type="text" class="form-control" id="title" placeholder="Your entry's title">
+      <label for="subtitle">Subtitle</label>
+      <input [(ngModel)]="entry.subtitle" name="subtitle" type="text" class="form-control" id="subtitle" placeholder="Your entry's subtitle">
+    </div>
+    <div class="form-group body">
+        <label for="body">Entry</label>
+        <textarea [(ngModel)]="entry.body" name="body" rows="20" class="form-control" id="body" placeholder="Type in your entry"></textarea>
+    </div>
+    <button class="btn btn-secondary" (click)="goBack()">Cancel</button>
+    <button class="btn btn-primary">{{ toUpdate ? "Update" : "Create Draft"}}</button>
+  </form>

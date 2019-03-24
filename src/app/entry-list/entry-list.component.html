@@ -1,0 +1,25 @@
+<h2>{{ personal ? "Your Drafts and Publications" : "All Publications" }}</h2>
+
+<form>
+
+  <table class="table">
+    
+    <tbody>
+      <tr *ngFor="let entry of entries" (click)="goToDetail(entry.id)" class="list-group-item-action">
+        <td class="table-entry">
+          <h3>{{ entry.title }}</h3>
+          <p>{{ entry.subtitle }}</p>
+          <p class="table-username">{{ getUserName(entry.userId) }}</p>
+        </td>
+        <td class="table-date">
+          <p>{{ entry.published ? "Published " + formatDate(entry.published) : "" }}</p>
+          <p>{{ entry.lastUpdated ? "Last Updated " + formatDate(entry.lastUpdated) : "" }}</p>
+          <p>{{ entry.isDraft ? "Draft of " + formatDate(entry.lastDraft) : ""}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a routerLink="/about" class="btn btn-outline-success">About</a>
+
+</form>

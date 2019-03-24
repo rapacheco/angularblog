@@ -1,0 +1,17 @@
+div {
+  text-decoration: none;  
+}
+
+.ml-auto {
+  margin-right: 4%;
+}
+
+.ml-auto .nav-item {
+  margin-right: 10%;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}

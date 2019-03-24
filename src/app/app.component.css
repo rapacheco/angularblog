@@ -1,0 +1,16 @@
+main {
+    width: 65%;
+    margin: 2% auto 4%;
+    padding: 3% 2% 2%;
+    background-color: white;
+    box-shadow: 0 0 50px 3px black;
+  
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  main {
+    width: 100%;
+    margin: 15% auto;
+  }    
+}

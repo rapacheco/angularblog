@@ -1,0 +1,21 @@
+/* form {
+    text-align: center;
+}
+
+legend {
+    margin-top: 2%;
+}
+
+input {
+    width: 35%;
+    margin: 2% auto 0;
+    text-align: center;
+}
+
+button {
+    margin-top: 1%;
+} */
+
+.error {
+    color: red;
+}

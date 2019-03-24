@@ -1,0 +1,26 @@
+h1 {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+p {
+    font-size: 2vw;
+}
+
+.jumbotron {
+    text-align: center;
+    padding: 4%;
+}
+
+.jumbotron button {
+    margin-top: 1%;
+}
+
+button:first-of-type {
+    margin-right: 5%;
+}
+
+@media only screen and (max-width: 768px) {
+    p {
+      font-size: 5vw;
+    }
+  }
